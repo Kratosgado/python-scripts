@@ -4,6 +4,8 @@ def checkPrime(number):
     for i in range(2, number+1, 1):
         if (number % i == 0):
             factors += 1
+        if (factors > 1):
+            return 0
     if (factors == 1):
         return number
     return 0
@@ -17,12 +19,19 @@ def getPrimes(prime):
 
 
 def getConsecutivePrimeSum(prime):
+
     primes = getPrimes(prime)
     sum = 0
     for i in range(len(primes)-1):
         sum += primes[i]
         if (sum == prime):
             return sum
+        if (sum > prime):
+            return
 
 
-# def consecutivePrimeSum(prime):
+print(getConsecutivePrimeSum(963))
+# for i in range(901, 1000, 2):
+#     print(".", end="")
+#     if (checkPrime(i) == i):
+#         print(getConsecutivePrimeSum(i))
