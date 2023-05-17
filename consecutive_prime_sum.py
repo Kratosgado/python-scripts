@@ -11,26 +11,36 @@ def checkPrime(number):
     return 0
 
 
-def getPrimes(prime):
+print(checkPrime(11))
+
+
+def getPrimesFactors(prime):
     primes = []
     for i in range(2, prime, 1):
         primes.append(checkPrime(i)) if (checkPrime(i) == i) else ""
+    print(primes)
     return primes
 
 
-def getConsecutivePrimeSum(prime):
+getPrimesFactors()
 
-    primes = getPrimes(prime)
+
+def getConsecutivePrimeSum(prime):
+    if (checkPrime(prime) == prime):
+        primes = getPrimesFactors(prime)
+    else:
+        return
     sum = 0
     for i in range(len(primes)-1):
         sum += primes[i]
         if (sum == prime):
             return sum
-        if (sum > prime):
-            return
+        # if (sum > prime):
+        #     return
 
 
-print(getConsecutivePrimeSum(963))
+# print(getPrimes(41))
+# print(getConsecutivePrimeSum(963))
 # for i in range(901, 1000, 2):
 #     print(".", end="")
 #     if (checkPrime(i) == i):
