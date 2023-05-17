@@ -4,11 +4,6 @@ double_array = [
     [5,1,7]
 ]
 
-def checkSwap(first, second):
-    if (first > second):
-        return second, first
-    return first, second
-
 
 def sort(arr):
     oneD = []
@@ -20,11 +15,13 @@ def sort(arr):
     print(oneD)
 
     counter = 0
-    low = 10
     for index in range(len(oneD)):
+        low = 10
         for num in range(len(oneD)):
+            print(len(oneD))
+            print("iteration ", num)
             if (oneD[num] < low):
-                oneD.remove[num]
+                low = oneD[num]
         sorted.append(low)
     return sorted
         
