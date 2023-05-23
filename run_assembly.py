@@ -21,7 +21,7 @@ basename = nasm_file.split('.')[0]
 os.system(f"nasm -f elf64 {nasm_file} -o {basename}.o")
 
 # link the object file generated
-os.system(f"ld {basename.o} -o {basename}")
+os.system(f"ld {basename}.o -o {basename}")
 
 # run the executable created
 os.system(f"./{basename}")
